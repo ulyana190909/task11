@@ -1,4 +1,4 @@
-package ru.netology.manager;
+package ru.netology;
 
 import ru.netology.domain.PurchaseItem;
 
@@ -11,9 +11,9 @@ public class CartManager {
             PurchaseItem[] tmp = new PurchaseItem[length];
             // itar + tab
             // копируем поэлементно
-            // for (int i = 0; i < items.length; i++) {
-            //   tmp[i] = items[i];
-            // }
+            for (int i = 0; i < items.length; i++) {
+            tmp[i] = items[i];
+            }
             System.arraycopy(items, 0, tmp, 0, items.length);
             // кладём последним наш элемент
             int lastIndex = tmp.length - 1;
