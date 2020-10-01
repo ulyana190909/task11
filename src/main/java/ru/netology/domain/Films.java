@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class PurchaseItem {
+public class Films {
     private int id;
-    private int productId;
-    private String productName;
-    private int productPrice;
+    private int filmId;
+    private String filmName;
+    private int filmPrice;
     private int count;
 }
