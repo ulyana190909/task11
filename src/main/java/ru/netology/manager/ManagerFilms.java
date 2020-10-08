@@ -1,31 +1,41 @@
 package ru.netology.manager;
 
-import ru.netology.domain.Films;
+import ru.netology.domain.Film;
+import ru.netology.domain.Film;
 
 public class ManagerFilms {
-    private Films[] films = new Films[0];
+    private Film[] films = new Film[0];
 
-//добавить фильм
+    private int afishaLenght = 10;
 
-    public Films[] addFilm(Films film) {
+    public ManagerFilms(int afishaLenght) {
+        this.afishaLenght = afishaLenght;
+    }
+
+    public ManagerFilms() {
+    }
+
+
+    //добавить фильм
+
+    public void addFilm(Film film) {
         int length = films.length + 1;
-        Films[] tmp = new Films[length];
+        Film[] add = new Film[length];
         for (int i = 0; i < films.length; i++) {
-            tmp[i] = films[i];
+            add[i] = films[i];
         }
-        System.arraycopy(films, 0, tmp, 0, films.length);
-        int lastFilm = tmp.length - 1;
-        tmp[lastFilm] = film;
-        films = tmp;
-
-        return films;
+        System.arraycopy(films, 0, add, 0, films.length);
+        int lastFilm = add.length - 1;
+        add[lastFilm] = film;
+        films = add;
     }
 
     //выдаем 10 фильмов в обратном порядке
 
-    public Films[] getFilm() {
-        int lastFilm = 10;
-        Films[] result = new Films[lastFilm];
+    public Film[] getFilm() {
+        int lastFilm = Math.min(films.length, afishaLenght);
+
+        Film[] result = new Film[lastFilm];
         for (int i = 0; i < result.length; i++) {
             int index = films.length - i - 1;
             result[i] = films[index];
