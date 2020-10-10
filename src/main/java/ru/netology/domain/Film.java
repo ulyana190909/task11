@@ -1,3 +1,4 @@
+
 package ru.netology.domain;
 
 import lombok.AllArgsConstructor;
@@ -7,10 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class PurchaseItem {
+public class Film {
     private int id;
-    private int productId;
-    private String productName;
-    private int productPrice;
-    private int count;
+    private int filmId;
+    private String filmName;
+    private int filmPrice;
 }
