@@ -9,6 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import repository1.AfishaRepository;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 
 @ExtendWith(MockitoExtension.class)
