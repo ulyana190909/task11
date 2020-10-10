@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.Film;
 
 
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class FilmTest {
@@ -19,6 +18,8 @@ public class FilmTest {
     private Film seventhFilm = new Film(7, 79844, "seventhFilm", 796);
     private Film eighthFilm = new Film(8, 45218, "eighthFilm", 578);
     private Film ninthFilm = new Film(9, 95419, "ninthFilm", 600);
+    private Film tenthFilm = new Film(10, 52548, "tenthFilm", 150);
+    private Film eleventhFilm = new Film(11, 25958, "eleventhFilm", 680);
 
 
     @BeforeEach
@@ -34,10 +35,8 @@ public class FilmTest {
         manager.addFilm(ninthFilm);
     }
 
-    //тест на добавление фильма
     @Test
-    public void shouldAddAndShowFilm1() {
-        Film tenthFilm = new Film(10, 11099, "tenthFilm", 700);
+    public void addFilmTest() {
         manager.addFilm(tenthFilm);
         Film[] actual = manager.getFilm();
         Film[] expected = new Film[]{tenthFilm, ninthFilm, eighthFilm, seventhFilm, sixthFilm, fifthFilm, fourthFilm, thirdFilm, secondFilm, firstFilm};
@@ -45,21 +44,19 @@ public class FilmTest {
     }
 
     @Test
-    public void shouldAddAndShowFilm2() {
-        Film[] actual = manager.getFilm();
-        Film[] expected = new Film[]{ninthFilm, eighthFilm, seventhFilm, sixthFilm, fifthFilm, fourthFilm, thirdFilm, secondFilm, firstFilm};
-        assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldAddAndShowFilm3() {
-        Film tenthFilm = new Film(10, 11099, "tenthFilm", 700);
-        Film eleventhFilm = new Film(11, 25844, "eleventhFilm", 580);
+    public void addFilmTest2() {
         manager.addFilm(tenthFilm);
         manager.addFilm(eleventhFilm);
         Film[] actual = manager.getFilm();
         Film[] expected = new Film[]{eleventhFilm, tenthFilm, ninthFilm, eighthFilm, seventhFilm, sixthFilm, fifthFilm, fourthFilm, thirdFilm, secondFilm};
         assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    public void showFilmTest() {
+        Film[] actual = manager.getFilm();
+        Film[] expected = new Film[]{ninthFilm, eighthFilm, seventhFilm, sixthFilm, fifthFilm, fourthFilm, thirdFilm, secondFilm, firstFilm};
+        assertArrayEquals(expected, actual);
     }
 }
 

@@ -30,7 +30,7 @@ public class ManagerFilms {
         films = add;
     }
 
-    //выдаем 10 фильмов в обратном порядке
+    //выдать добавленные фильмы в обратном порядке
 
     public Film[] getFilm() {
         int lastFilm = Math.min(films.length, afishaLenght);
