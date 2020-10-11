@@ -25,7 +25,7 @@ public class AfishaCustomManagerTest {
     private Film sixthFilm = new Film(6, 60145, "sixthFilm", 680);
 
     @Test
-    public void getFilmTest2() {
+    public void shouldShowFilms() {
         Film[] returned = new Film[]{firstFilm, secondFilm, thirdFilm, fourthFilm};
         doReturn(returned).when(afishaRepository).findAll();
 
@@ -35,7 +35,7 @@ public class AfishaCustomManagerTest {
     }
 
     @Test
-    public void getFilmTest() {
+    public void shouldShowFilms2() {
         Film[] returned = new Film[]{firstFilm, secondFilm, thirdFilm, fourthFilm, fifthFilm};
         doReturn(returned).when(afishaRepository).findAll();
 
@@ -46,7 +46,7 @@ public class AfishaCustomManagerTest {
     }
 
     @Test
-    public void getFilmTest3() {
+    public void shouldShowFilms3() {
         Film[] returned = new Film[]{firstFilm, secondFilm, thirdFilm, fourthFilm, fifthFilm, sixthFilm};
         doReturn(returned).when(afishaRepository).findAll();
 

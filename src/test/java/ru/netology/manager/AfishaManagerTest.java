@@ -30,7 +30,7 @@ public class AfishaManagerTest {
     private Film eleventhFilm = new Film(11, 58963, "eleventhFilm", 250);
 
     @Test
-    public void getFilmTest() {
+    public void shouldShowFilms() {
         Film[] returned = new Film[]{firstFilm, secondFilm, thirdFilm, fourthFilm, fifthFilm, sixthFilm, seventhFilm, eighthFilm, ninthFilm};
         doReturn(returned).when(afishaRepository).findAll();
 
@@ -41,7 +41,7 @@ public class AfishaManagerTest {
     }
 
     @Test
-    public void getFilmTest2() {
+    public void shouldShowFilms2() {
         Film[] returned = new Film[]{firstFilm, secondFilm, thirdFilm, fourthFilm, fifthFilm, sixthFilm, seventhFilm, eighthFilm, ninthFilm, tenthFilm};
         doReturn(returned).when(afishaRepository).findAll();
 
@@ -52,7 +52,7 @@ public class AfishaManagerTest {
     }
 
     @Test
-    public void getFilmTest3() {
+    public void shouldShowFilms3() {
         Film[] returned = new Film[]{firstFilm, secondFilm, thirdFilm, fourthFilm, fifthFilm, sixthFilm, seventhFilm, eighthFilm, ninthFilm, tenthFilm, eleventhFilm};
         doReturn(returned).when(afishaRepository).findAll();
 
