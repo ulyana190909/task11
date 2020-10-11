@@ -1,6 +1,5 @@
 package ru.netology.manager;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -27,20 +26,8 @@ public class AfishaManagerTest {
     private Film seventhFilm = new Film(7, 79844, "seventhFilm", 796);
     private Film eighthFilm = new Film(8, 45218, "eighthFilm", 578);
     private Film ninthFilm = new Film(9, 95419, "ninthFilm", 600);
-
-
-    @BeforeEach
-    public void setUp() {
-        afishaManager.add(firstFilm);
-        afishaManager.add(secondFilm);
-        afishaManager.add(thirdFilm);
-        afishaManager.add(fourthFilm);
-        afishaManager.add(fifthFilm);
-        afishaManager.add(sixthFilm);
-        afishaManager.add(seventhFilm);
-        afishaManager.add(eighthFilm);
-        afishaManager.add(ninthFilm);
-    }
+    private Film tenthFilm = new Film(10, 58254, "tenthFilm", 700);
+    private Film eleventhFilm = new Film(11, 58963, "eleventhFilm", 250);
 
     @Test
     public void getFilmTest() {
@@ -49,6 +36,28 @@ public class AfishaManagerTest {
 
         Film[] actual = afishaManager.getAll();
         Film[] expected = new Film[]{ninthFilm, eighthFilm, seventhFilm, sixthFilm, fifthFilm, fourthFilm, thirdFilm, secondFilm, firstFilm};
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void getFilmTest2() {
+        Film[] returned = new Film[]{firstFilm, secondFilm, thirdFilm, fourthFilm, fifthFilm, sixthFilm, seventhFilm, eighthFilm, ninthFilm, tenthFilm};
+        doReturn(returned).when(afishaRepository).findAll();
+
+        Film[] actual = afishaManager.getAll();
+        Film[] expected = new Film[]{tenthFilm, ninthFilm, eighthFilm, seventhFilm, sixthFilm, fifthFilm, fourthFilm, thirdFilm, secondFilm, firstFilm};
+
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void getFilmTest3() {
+        Film[] returned = new Film[]{firstFilm, secondFilm, thirdFilm, fourthFilm, fifthFilm, sixthFilm, seventhFilm, eighthFilm, ninthFilm, tenthFilm, eleventhFilm};
+        doReturn(returned).when(afishaRepository).findAll();
+
+        Film[] actual = afishaManager.getAll();
+        Film[] expected = new Film[]{eleventhFilm, tenthFilm, ninthFilm, eighthFilm, seventhFilm, sixthFilm, fifthFilm, fourthFilm, thirdFilm, secondFilm};
 
         assertArrayEquals(expected, actual);
     }

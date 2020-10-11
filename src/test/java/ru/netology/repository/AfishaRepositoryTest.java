@@ -41,6 +41,7 @@ public class AfishaRepositoryTest {
         Film[] expected = new Film[0];
         assertArrayEquals(actual, expected);
     }
+
     @Test
     public void findById() {
         int findId = 6;

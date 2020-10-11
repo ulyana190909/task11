@@ -7,8 +7,12 @@ public class AfishaManager {
     private AfishaRepository repository;
     private int afishaLenght = 10;
 
-    public AfishaManager(AfishaRepository repository) {
+    public AfishaManager(AfishaRepository repository, int afishaLenght) {
         this.repository = repository;
+        this.afishaLenght = afishaLenght;
+    }
+
+    public AfishaManager() {
     }
 
     public void add(Film film) {

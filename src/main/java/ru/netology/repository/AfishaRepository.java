@@ -1,7 +1,5 @@
 package ru.netology.repository;
-
 import ru.netology.domain.Film;
-import ru.netology.manager.AfishaManager;
 
 public class AfishaRepository {
     private Film[] films = new Film[0];
